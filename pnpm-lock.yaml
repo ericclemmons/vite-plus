@@ -280,6 +280,9 @@ overrides:
 packageExtensionsChecksum: sha256-Tldxs3DhJEw/FFBonUidqhCBqApA0zxQnop3Y+BTO3U=
 
 patchedDependencies:
+  '@vitest/mocker@4.1.5':
+    hash: adef9b6b029d1060f7181d0b0171a1b6991aaad36a979388e12e34333397733f
+    path: patches/@vitest__mocker@4.1.5.patch
   chokidar@3.6.0:
     hash: 8a4f9e2b397e6034b91a0508faae3cecb97f222313faa129d7cb0eb71e9d0e84
     path: vite/patches/chokidar@3.6.0.patch
@@ -12192,7 +12195,7 @@ snapshots:
   '@vitest/browser-playwright@4.1.5(playwright@1.57.0)(vite@packages+core)(vitest@4.1.5)':
     dependencies:
       '@vitest/browser': 4.1.5(vite@packages+core)(vitest@4.1.5)
-      '@vitest/mocker': 4.1.5(vite@packages+core)
+      '@vitest/mocker': 4.1.5(patch_hash=adef9b6b029d1060f7181d0b0171a1b6991aaad36a979388e12e34333397733f)(vite@packages+core)
       playwright: 1.57.0
       tinyrainbow: 3.1.0
       vitest: 4.1.5(@edge-runtime/vm@5.0.0)(@opentelemetry/api@1.9.0)(@types/node@24.10.3)(@vitest/browser-playwright@4.1.5)(@vitest/browser-preview@4.1.5)(@vitest/browser-webdriverio@4.1.5)(@vitest/coverage-istanbul@4.1.5)(@vitest/coverage-v8@4.1.5)(@vitest/ui@4.1.5)(happy-dom@20.0.10)(jsdom@27.2.0)(vite@packages+core)
@@ -12228,7 +12231,7 @@ snapshots:
   '@vitest/browser@4.1.5(vite@packages+core)(vitest@4.1.5)':
     dependencies:
       '@blazediff/core': 1.9.1
-      '@vitest/mocker': 4.1.5(vite@packages+core)
+      '@vitest/mocker': 4.1.5(patch_hash=adef9b6b029d1060f7181d0b0171a1b6991aaad36a979388e12e34333397733f)(vite@packages+core)
       '@vitest/utils': 4.1.5
       magic-string: 0.30.21
       pngjs: 7.0.0
@@ -12285,7 +12288,7 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.5(vite@packages+core)':
+  '@vitest/mocker@4.1.5(patch_hash=adef9b6b029d1060f7181d0b0171a1b6991aaad36a979388e12e34333397733f)(vite@packages+core)':
     dependencies:
       '@vitest/spy': 4.1.5
       estree-walker: 3.0.3
@@ -16136,7 +16139,7 @@ snapshots:
   vitest@4.1.5(@edge-runtime/vm@5.0.0)(@opentelemetry/api@1.9.0)(@types/node@24.10.3)(@vitest/browser-playwright@4.1.5)(@vitest/browser-preview@4.1.5)(@vitest/browser-webdriverio@4.1.5)(@vitest/coverage-istanbul@4.1.5)(@vitest/coverage-v8@4.1.5)(@vitest/ui@4.1.5)(happy-dom@20.0.10)(jsdom@27.2.0)(vite@packages+core):
     dependencies:
       '@vitest/expect': 4.1.5
-      '@vitest/mocker': 4.1.5(vite@packages+core)
+      '@vitest/mocker': 4.1.5(patch_hash=adef9b6b029d1060f7181d0b0171a1b6991aaad36a979388e12e34333397733f)(vite@packages+core)
       '@vitest/pretty-format': 4.1.5
       '@vitest/runner': 4.1.5
       '@vitest/snapshot': 4.1.5
@@ -16173,7 +16176,7 @@ snapshots:
   vitest@4.1.5(@edge-runtime/vm@5.0.0)(@opentelemetry/api@1.9.0)(@types/node@24.12.2)(@vitest/browser-playwright@4.1.5)(@vitest/browser-preview@4.1.5)(@vitest/browser-webdriverio@4.1.5)(@vitest/coverage-istanbul@4.1.5)(@vitest/coverage-v8@4.1.5)(@vitest/ui@4.1.5)(happy-dom@20.0.10)(jsdom@27.2.0)(vite@packages+core):
     dependencies:
       '@vitest/expect': 4.1.5
-      '@vitest/mocker': 4.1.5(vite@packages+core)
+      '@vitest/mocker': 4.1.5(patch_hash=adef9b6b029d1060f7181d0b0171a1b6991aaad36a979388e12e34333397733f)(vite@packages+core)
       '@vitest/pretty-format': 4.1.5
       '@vitest/runner': 4.1.5
       '@vitest/snapshot': 4.1.5
