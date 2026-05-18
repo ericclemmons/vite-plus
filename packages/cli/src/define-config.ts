@@ -215,11 +215,11 @@ function mergeAutoInlineDeps<T extends { test?: { server?: { deps?: { inline?: u
   return {
     ...config,
     test: {
-      ...(config.test ?? {}),
+      ...config.test,
       server: {
-        ...(config.test?.server ?? {}),
+        ...config.test?.server,
         deps: {
-          ...(config.test?.server?.deps ?? {}),
+          ...config.test?.server?.deps,
           inline: merged,
         },
       },
