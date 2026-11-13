@@ -390,10 +390,13 @@ pub async fn main(
     }
 
     let args_with_program = std::iter::once("vp".to_string()).chain(args_vec.iter().cloned());
-    let cli_args = match CLIArgs::try_parse_from(args_with_program) {
+    let mut cli_args = match CLIArgs::try_parse_from(args_with_program) {
         Ok(args) => args,
         Err(err) => return handle_cli_parse_error(err),
     };
+    if let CLIArgs::ViteTask(command) = &mut cli_args {
+        command.detect_adhoc_command(&args_vec);
+    }
 
     match cli_args {
         CLIArgs::Synthesizable(subcmd) => {
