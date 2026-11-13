@@ -19,6 +19,21 @@ on:
         type: string
         required: false
         default: 'https://viteplus.dev'
+      targets:
+        description: 'JSON array of {target, os} build settings. Defaults to every release target.'
+        type: string
+        required: false
+        default: >-
+          [
+            {"target": "aarch64-apple-darwin", "os": "macos-latest"},
+            {"target": "x86_64-apple-darwin", "os": "macos-latest"},
+            {"target": "aarch64-unknown-linux-gnu", "os": "ubuntu-latest"},
+            {"target": "aarch64-unknown-linux-musl", "os": "ubuntu-latest"},
+            {"target": "x86_64-unknown-linux-gnu", "os": "ubuntu-latest"},
+            {"target": "x86_64-unknown-linux-musl", "os": "ubuntu-latest"},
+            {"target": "x86_64-pc-windows-msvc", "os": "namespace-profile-windows-4c-8g"},
+            {"target": "aarch64-pc-windows-msvc", "os": "namespace-profile-windows-4c-8g"}
+          ]
 
 jobs:
   build-rust:
@@ -34,23 +49,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        settings:
-          - target: aarch64-apple-darwin
-            os: macos-latest
-          - target: x86_64-apple-darwin
-            os: macos-latest
-          - target: aarch64-unknown-linux-gnu
-            os: ubuntu-latest
-          - target: aarch64-unknown-linux-musl
-            os: ubuntu-latest
-          - target: x86_64-unknown-linux-gnu
-            os: ubuntu-latest
-          - target: x86_64-unknown-linux-musl
-            os: ubuntu-latest
-          - target: x86_64-pc-windows-msvc
-            os: namespace-profile-windows-4c-8g
-          - target: aarch64-pc-windows-msvc
-            os: namespace-profile-windows-4c-8g
+        settings: ${{ fromJSON(inputs.targets) }}
     steps:
       - uses: taiki-e/checkout-action@7d1e50e93dc4fb3bba58f85018fadf77898aee8b # v1.4.2
       - uses: ./.github/actions/clone
